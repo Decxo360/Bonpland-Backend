@@ -7,3 +7,7 @@ const sequelize = new Sequelize('database', 'username', 'password', {
     password:'',
     dialect: 'mysql'
 });
+
+module.exports = {
+    sequelize
+}
