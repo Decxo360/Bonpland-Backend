@@ -1,14 +1,16 @@
 const express = require('express');
-const inmueblesRoute = require('./src/routes/inmueblesRoute');
+const cors = require('cors');
 
 const app = express();
 
+app.use(cors()); // Habilitar otras aplicaciones para que hagan solicitudes
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-app.use('/inmuebles', inmueblesRoute);
+app.use('/usuario', require('./routes/usuariosRoute'));
+app.use('/inmuebles', require('./src/routes/inmueblesRoute'));
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3030;
 app.listen(port, () => {
   console.log('RUNNING SERVER ON PORT:', port);
 });
