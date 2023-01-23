@@ -4,8 +4,12 @@ const inmueblesController = require('../controllers/inmueblesController');
 
 const inmueblesRoute = Router();
 
-// const controller = new InmueblesController();
-
 inmueblesRoute.get('/', inmueblesController.getAll);
+
+inmueblesRoute.post('/', inmueblesController.save);
+
+inmueblesRoute.post('/update', inmueblesController.update);
+
+inmueblesRoute.delete('/', inmueblesController.deleteById);
 
 module.exports = inmueblesRoute;
