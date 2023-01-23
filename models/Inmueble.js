@@ -29,6 +29,8 @@ const Inmueble = sequelize.define('inmueble',{
     imagen:{
         type:DataTypes.BLOB
     }
+},{
+    freezeTableName:true
 })
 module.exports={
     Inmueble

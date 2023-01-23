@@ -12,6 +12,8 @@ const Pais = sequelize.define('pais', {
   nombre: {
     type: DataTypes.STRING
   }
+},{
+    freezeTableName:true
 });
 
 Pais.Region = Pais.hasMany(Region)

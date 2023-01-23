@@ -14,6 +14,8 @@ const Region = sequelize.define('region', {
   idpais: {
     type: DataTypes.INTEGER
   }
+},{
+    freezeTableName:true
 });
 
 Region.Comuna = Region.hasMany(Comuna)

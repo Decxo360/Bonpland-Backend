@@ -13,6 +13,8 @@ const Comuna = sequelize.define('comuna', {
   idregion:{
     type:DataTypes.STRING
   }
+},{
+    freezeTableName:true
 });
 
 
