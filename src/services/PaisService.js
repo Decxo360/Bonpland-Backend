@@ -18,7 +18,10 @@ class PaisService {
         idpais,
       },
     })
-    return pais
+    return {
+        "msg":"Ha sido eliminado correctamente",
+        "RowsDeleted":pais
+    }
   }
 }
 
