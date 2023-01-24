@@ -10,7 +10,15 @@ const usuarioController = {
   },
 
   save: async (req, res) => {
-    const user = await service.save();
+    const {nombre, apellido_p, apellido_m, correo, contrasena} = req.body;
+
+    const user = await service.save({
+      nombre,
+      apellido_p,
+      apellido_m,
+      correo,
+      contrasena,
+    });
 
     res.json(user);
   },

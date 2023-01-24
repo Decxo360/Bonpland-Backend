@@ -7,13 +7,15 @@ class UsuarioService {
     return users;
   }
 
-  async save() {
+  async save(userNew) {
+    const {nombre, apellido_p, apellido_m, correo, contrasena} = userNew;
+
     const users = await Usuario.create({
-      nombre: 'prueba',
-      apellido_p: 'prueba',
-      apellido_m: 'prueba',
-      correo: 'prueba',
-      contrasena: 'prueba',
+      nombre,
+      apellido_p,
+      apellido_m,
+      correo,
+      contrasena,
     });
 
     return users;
