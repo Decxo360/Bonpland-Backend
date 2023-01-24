@@ -26,7 +26,6 @@ const Usuario = sequelize.define('usuario',{
         type:DataTypes.STRING
     }
 },{
-    timestamps: false,
     freezeTableName:true
 })
 
