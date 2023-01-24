@@ -9,6 +9,7 @@ app.use(express.json());
 
 app.use('/usuario', require('./src/routes/usuariosRoute'));
 app.use('/inmuebles', require('./src/routes/inmueblesRoute'));
+app.use('/pais', require('./src/routes/PaisRoute'));
 
 const port = process.env.PORT || 3030;
 app.listen(port, () => {
