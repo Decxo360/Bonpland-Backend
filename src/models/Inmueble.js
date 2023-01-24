@@ -28,6 +28,18 @@ const Inmueble = sequelize.define('inmueble',{
     },
     imagen:{
         type:DataTypes.BLOB
+    },
+    descripcion:{
+        type:DataTypes.TEXT,
+        allowNull:false
+    },
+    nDormitorio:{
+        type: DataTypes.INTEGER,
+        allowNull:false
+    },
+    nBano:{
+        type:DataTypes.INTEGER,
+        allowNull:false
     }
 },{
     freezeTableName:true
