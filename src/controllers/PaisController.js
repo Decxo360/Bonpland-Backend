@@ -4,7 +4,7 @@ const service = new PaisService();
 
 const PaisController = {
   getAll: async (req, res) => {
-    const paises = await service.getAll();
+    const paises = await service.getPaises();
     res.json(paises);
   },
   deleteById: async (req, res) => {
