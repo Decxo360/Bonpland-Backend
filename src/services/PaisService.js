@@ -6,7 +6,7 @@ class PaisService {
     return pais
   }
   async save(newPais) {
-    const nombre = newPais
+    const {nombre} = newPais
     const pais = await Pais.create({
       nombre
     });
