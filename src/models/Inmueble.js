@@ -1,6 +1,7 @@
 const {sequelize} = require('../config/bd')
 const {DataTypes}=require('sequelize')
 const { Usuario } = require('./Usuario')
+const { Favorito } = require('./Favorito')
 
 const Inmueble = sequelize.define('inmueble',{
     idinmueble: {
@@ -60,7 +61,7 @@ Inmueble.hasMany(Favorito,{
     sourceKey:'idinmueble'
 })
 
-Favorito.belongsToMany(Inmueble,{
+Favorito.belongsTo(Inmueble,{
     foreignKey:'idinmueble',
     targetKey:'idinmueble'
 })
