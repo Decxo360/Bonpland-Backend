@@ -12,10 +12,10 @@ const Inmueble = sequelize.define('inmueble',{
         type: DataTypes.INTEGER
     },
     rangoMin:{
-        type:DataTypes.STRING
+        type:DataTypes.INTEGER
     },
     rangoMax:{
-        type:DataTypes.STRING
+        type:DataTypes.INTEGER
     },
     mtCuadrado:{
         type:DataTypes.INTEGER,
@@ -45,6 +45,18 @@ const Inmueble = sequelize.define('inmueble',{
 },{
     freezeTableName:true
 })
+
+
+Inmueble.hasMany(Favorito,{
+    foreignKey:'idinmueble',
+    sourceKey:'idinmueble'
+})
+
+Favorito.belongsToMany(Inmueble,{
+    foreignKey:'idinmueble',
+    targetKey:'idinmueble'
+})
+
 module.exports={
     Inmueble
 }
