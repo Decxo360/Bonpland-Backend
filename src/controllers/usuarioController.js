@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 const { Usuario } = require('../models/Usuario');
-=======
-const UsuarioService = require('../services/usuarioService');
->>>>>>> 27f220520bdac590c091cebbdc691944ba212b17
-
+const UsuarioService = require('../services/usuarioService')
 const service = new UsuarioService();
 
 const usuarioController = {
