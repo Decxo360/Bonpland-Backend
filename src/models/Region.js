@@ -11,9 +11,6 @@ const Region = sequelize.define('region', {
   nombre: {
     type: DataTypes.STRING
   },
-  idpais: {
-    type: DataTypes.INTEGER
-  }
 },{
     freezeTableName:true
 });
