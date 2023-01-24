@@ -22,6 +22,22 @@ const usuarioController = {
 
     res.json(user);
   },
+
+  update: async (req, res) => {
+    const {idusuario, nombre, apellido_p, apellido_m, correo, contrasena} =
+      req.body;
+
+    const user = await service.update({
+      idusuario,
+      nombre,
+      apellido_p,
+      apellido_m,
+      correo,
+      contrasena,
+    });
+
+    res.json(user);
+  },
 };
 
 module.exports = usuarioController;

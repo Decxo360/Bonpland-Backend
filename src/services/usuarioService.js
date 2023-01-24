@@ -20,6 +20,28 @@ class UsuarioService {
 
     return users;
   }
+
+  async update(userReplace) {
+    const {idusuario, nombre, apellido_p, apellido_m, correo, contrasena} =
+      userReplace;
+
+    const users = await Usuario.update(
+      {
+        nombre,
+        apellido_p,
+        apellido_m,
+        correo,
+        contrasena,
+      },
+      {
+        where: {
+          idusuario,
+        },
+      }
+    );
+
+    return users;
+  }
 }
 
 module.exports = UsuarioService;
