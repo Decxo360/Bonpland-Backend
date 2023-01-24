@@ -45,6 +45,7 @@ Inmueble.belongsTo(Usuario,{
     targetKey:'idusuario'
 })
 
+
 module.exports={
     Usuario
 }

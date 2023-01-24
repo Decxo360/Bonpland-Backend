@@ -1,7 +1,6 @@
 const {sequelize} = require('../config/bd')
 const {DataTypes}=require('sequelize')
 const { Usuario } = require('./Usuario')
-const { Favorito } = require('./Favorito')
 
 const Inmueble = sequelize.define('inmueble',{
     idinmueble: {
@@ -52,18 +51,8 @@ const Inmueble = sequelize.define('inmueble',{
         allowNull:false
     }
 },{
-    freezeTableName:true
-})
-
-
-Inmueble.hasMany(Favorito,{
-    foreignKey:'idinmueble',
-    sourceKey:'idinmueble'
-})
-
-Favorito.belongsTo(Inmueble,{
-    foreignKey:'idinmueble',
-    targetKey:'idinmueble'
+    freezeTableName:true,
+    timestamps:false
 })
 
 module.exports={
