@@ -1,7 +1,7 @@
 const {Pais} = require('../models/Pais');
 
 class PaisService {
-  async getUsers() {
+  async getPaises() {
     const pais = await Pais.findAll();
     return pais
   }
