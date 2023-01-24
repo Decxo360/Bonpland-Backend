@@ -38,6 +38,14 @@ const usuarioController = {
 
     res.json(user);
   },
+
+  delete: async (req, res) => {
+    const {idusuario} = req.body;
+
+    const user = await service.delete(idusuario);
+
+    res.json(user);
+  },
 };
 
 module.exports = usuarioController;

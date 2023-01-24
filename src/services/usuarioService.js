@@ -42,6 +42,16 @@ class UsuarioService {
 
     return users;
   }
+
+  async delete(idusuario) {
+    const users = await Usuario.destroy({
+      where: {
+        idusuario,
+      },
+    });
+
+    return users;
+  }
 }
 
 module.exports = UsuarioService;
