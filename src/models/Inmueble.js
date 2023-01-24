@@ -27,7 +27,8 @@ const Inmueble = sequelize.define('inmueble',{
         type:DataTypes.STRING
     },
     imagen:{
-        type:DataTypes.BLOB
+        type:DataTypes.BLOB,
+        allowNull:true
     },
     descripcion:{
         type:DataTypes.TEXT,

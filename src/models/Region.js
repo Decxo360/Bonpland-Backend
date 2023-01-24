@@ -18,6 +18,10 @@ const Region = sequelize.define('region', {
     freezeTableName:true
 });
 
-Region.Comuna = Region.hasMany(Comuna)
+Region.hasOne(Comuna,{foreignKey:'idregion',sourceKey:'idregion'})
+Comuna.belongsTo(Comuna,{foreignKey:'idregion',targetKey:'idregion'})
+
+Region.hasOne(Ubicacion,{foreignKey:'idregion',sourceKey:'idregion'})
+Ubicacion.belongsTo(Region,{foreignKey:'idregion',targetKey:'idregion'})
 
 module.exports = {Region}

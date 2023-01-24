@@ -1,6 +1,7 @@
 const { DataTypes, HasMany } = require('sequelize');
 const {sequelize} = require('../config/bd')
-const {Region}=require('./Region')
+const {Region}=require('./Region');
+const { Ubicacion } = require('./Ubicacion');
 
 
 const Pais = sequelize.define('pais', {
@@ -16,6 +17,11 @@ const Pais = sequelize.define('pais', {
     freezeTableName:true
 });
 
-Pais.Region = Pais.hasMany(Region)
+Pais.hasMany(Region,{foreignKey:'idpais',sourceKey:'idpais'})
+Region.belongsTo(Pais,{foreignKey:'idpais',targetKey:'idpais'})
+
+Pais.hasMany(Ubicacion,{foreignKey:'idpais',sourceKey:'idpais'})
+Ubicacion.belongsTo(Pais,{foreignKey:'idpais',targetKey:'idpais'})
+
 
 module.exports = {Pais}

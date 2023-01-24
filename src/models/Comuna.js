@@ -17,6 +17,8 @@ const Comuna = sequelize.define('comuna', {
     freezeTableName:true
 });
 
+Comuna.hasOne(Ubicacion,{foreignKey:'idcomuna',sourceKey:'idcomuna'})
+Ubicacion.belongsTo(Comuna,{foreignKey:'idcomuna',targetKey:'idcomuna'})
 
 
 module.exports = {Comuna}
