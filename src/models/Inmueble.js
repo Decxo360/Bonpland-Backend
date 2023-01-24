@@ -41,6 +41,14 @@ const Inmueble = sequelize.define('inmueble',{
     nBano:{
         type:DataTypes.INTEGER,
         allowNull:false
+    },
+    tipoPropiedad:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    estado:{
+        type:DataTypes.STRING,
+        allowNull:false
     }
 },{
     freezeTableName:true
