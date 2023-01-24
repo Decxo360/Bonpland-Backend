@@ -1,7 +1,29 @@
-POST http://localhost:5000/inmuebles/update HTTP/1.1
+# POST http://localhost:5000/inmuebles HTTP/1.1
+# content-type: application/json
+
+# {
+#     "id": 10,
+#     "type": "venta"
+# }
+
+GET http://localhost:3030/usuario/obtener HTTP/1.1
 content-type: application/json
 
-{
-    "id": 10,
-    "type": "venta"
-}
+# POST http://localhost:3030/usuario/guardar HTTP/1.1
+# content-type: application/json
+
+# {
+#   "nombre": "prueb2a",
+#   "apellido_p": "prueba2",
+#   "apellido_m": "prueba2",
+#   "correo": "prueb2a",
+#   "contrasena": "prueba2"
+# }
+
+
+
+
+
+
+
+# await sequelize.sync();

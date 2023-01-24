@@ -1,11 +1,19 @@
-const {Usuario} = require('../models/Usuario');
+const UsuarioService = require('../services/usuarioService');
 
-const getUsers = async () => {
-  const user = await Usuario.findAll();
-  console.log(user);
-  return true;
+const service = new UsuarioService();
+
+const usuarioController = {
+  getUsers: async (req, res) => {
+    const user = await service.getUsers();
+
+    res.json(user);
+  },
+
+  save: async (req, res) => {
+    const user = await service.save();
+
+    res.json(user);
+  },
 };
 
-module.exports = {
-  getUsers,
-};
+module.exports = usuarioController;
