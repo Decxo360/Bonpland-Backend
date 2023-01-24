@@ -8,8 +8,8 @@ const PaisController = {
     res.json(paises);
   },
   deleteById: async (req, res) => {
-    const {id} = req.body;
-    const isDeleted = await service.deleteById(id);
+    const {idpais} = req.body;
+    const isDeleted = await service.delete(idpais);
     res.json(isDeleted);
   },
   save: async (req, res) => {
