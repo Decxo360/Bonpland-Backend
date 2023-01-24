@@ -7,7 +7,7 @@ app.use(cors()); // Habilitar otras aplicaciones para que hagan solicitudes
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-app.use('/usuario', require('./routes/usuariosRoute'));
+app.use('/usuario', require('./src/routes/usuariosRoute'));
 app.use('/inmuebles', require('./src/routes/inmueblesRoute'));
 
 const port = process.env.PORT || 3030;
