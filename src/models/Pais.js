@@ -14,6 +14,7 @@ const Pais = sequelize.define('pais', {
     type: DataTypes.STRING
   }
 },{
+    timestamps: false,
     freezeTableName:true
 });
 
