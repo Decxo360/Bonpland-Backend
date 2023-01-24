@@ -1,16 +1,15 @@
-const { DataTypes, HasMany } = require('sequelize');
-const {sequelize} = require('../config/bd')
+const { DataTypes, belongsToMany } = require('sequelize');
+const {sequelize} = require('../config/bd');
+const { Inmueble } = require('./Inmueble');
+const { Usuario } = require('./Usuario');
 
-const Favorito = sequelize.define('favorito', {
-    idFavorito:{
-        type:DataTypes.INTEGER,
-        autoIncrement:true,
-        allowNull:false,
-        primaryKey:true
-    }
-},{
-    freezeTableName:true
+const Favorito = sequelize.define('favorito', {},{
+    freezeTableName:true,
+    timestamps:false
 });
+
+Usuario.belongsToMany(Inmueble, { through: Favorito,foreignKey:'idusuario' });
+Inmueble.belongsToMany(Usuario, { through: Favorito,foreignKey:'idinmueble' });
 
 
 
