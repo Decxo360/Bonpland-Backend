@@ -19,7 +19,10 @@ class ComunaService {
         idcomuna,
       },
     })
-    return comuna
+    return {
+      "msg":"Ha sido eliminado correctamente",
+      "RowsDeleted":comuna
+  }
   }
 }
 

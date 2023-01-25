@@ -19,7 +19,10 @@ class RegionService {
         idregion,
       },
     })
-    return region
+    return {
+      "msg":"Ha sido eliminado correctamente",
+      "RowsDeleted":region
+  }
   }
 }
 
