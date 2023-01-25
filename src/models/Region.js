@@ -13,7 +13,8 @@ const Region = sequelize.define('region', {
     type: DataTypes.STRING
   },
 },{
-    freezeTableName:true
+    freezeTableName:true,
+    timestamps:false
 });
 
 Region.hasOne(Comuna,{foreignKey:'idregion',sourceKey:'idregion'})

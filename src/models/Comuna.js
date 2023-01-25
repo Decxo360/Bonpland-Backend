@@ -12,7 +12,8 @@ const Comuna = sequelize.define('comuna', {
     type: DataTypes.STRING
   },
 },{
-    freezeTableName:true
+    freezeTableName:true,
+    timestamps:false
 });
 
 Comuna.hasOne(Ubicacion,{foreignKey:'idcomuna',sourceKey:'idcomuna'})
