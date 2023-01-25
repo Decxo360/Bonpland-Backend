@@ -10,6 +10,8 @@ app.use(express.json());
 app.use('/usuario', require('./src/routes/usuariosRoute'));
 app.use('/inmuebles', require('./src/routes/inmueblesRoute'));
 app.use('/pais', require('./src/routes/PaisRoute'));
+app.use('/region', require('./src/routes/RegionRoutes'));
+app.use('/comuna', require('./src/routes/ComunaRoutes'));
 
 const port = process.env.PORT || 3030;
 app.listen(port, () => {
