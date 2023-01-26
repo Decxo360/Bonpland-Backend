@@ -1,7 +1,7 @@
 # ----------------INMUEBLES---------------------
 
-# GET http://localhost:3030/inmuebles HTTP/1.1
-# content-type: application/json
+GET http://localhost:3030/inmuebles HTTP/1.1
+content-type: application/json
 
 # POST http://localhost:3030/inmuebles HTTP/1.1
 # content-type: application/json
@@ -21,6 +21,31 @@
 #       "estado": "bueno"
 # }
 
+# POST http://localhost:3030/inmuebles/update HTTP/1.1
+# content-type: application/json
+
+# {
+#       "idinmueble": 2,
+#       "ambientes": 5,
+#       "rangoMin": "1000000",
+#       "rangoMax": "5000000",
+#       "mtCuadrado": "90", 
+#       "corredor": "no lo se",
+#       "ubicacion": "coyoacan",
+#       "imagen": "imagen",
+#       "descripcion": "modificado",
+#       "nDormitorio": 8,
+#       "nBano": 4,
+#       "tipoPropiedad": "mansion",
+#       "estado": "bueno"
+# }
+
+# DELETE  http://localhost:3030/inmuebles/ HTTP/1.1
+# content-type: application/json
+
+# {
+#   "id": 1
+# }
 
 # ----------------USUARIO---------------------
 
