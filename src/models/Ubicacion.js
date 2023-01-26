@@ -16,7 +16,8 @@ const Ubicacion = sequelize.define('ubicacion', {
     type: DataTypes.INTEGER
   }
 },{
-    freezeTableName:true
+    freezeTableName:true,
+    timestamps:false
 });
 
 Ubicacion.hasOne(Inmueble,{foreignKey:'idubicacion',sourceKey:'idubicacion'})
