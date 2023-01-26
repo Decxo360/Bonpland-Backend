@@ -1,60 +1,70 @@
-const {sequelize} = require('../config/bd')
-const {DataTypes}=require('sequelize')
-const { Usuario } = require('./Usuario')
+const {sequelize} = require('../config/bd');
+const {DataTypes} = require('sequelize');
+const {Usuario} = require('./Usuario');
 
-const Inmueble = sequelize.define('inmueble',{
+const Inmueble = sequelize.define(
+  'inmueble',
+  {
     idinmueble: {
-        type : DataTypes.INTEGER,
-        autoIncrement:true,
-        primaryKey:true
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
     },
-    ambientes:{
-        type: DataTypes.INTEGER
+    ambientes: {
+      type: DataTypes.INTEGER,
     },
-    rangoMin:{
-        type:DataTypes.INTEGER
+    rangoMin: {
+      type: DataTypes.INTEGER,
     },
-    rangoMax:{
-        type:DataTypes.INTEGER
+    rangoMax: {
+      type: DataTypes.INTEGER,
     },
-    mtCuadrado:{
-        type:DataTypes.INTEGER,
+    mtCuadrado: {
+      type: DataTypes.INTEGER,
     },
-    corredor:{
-        type:DataTypes.INTEGER,
+    corredor: {
+      type: DataTypes.INTEGER,
     },
-    ubicacion:{
-        type:DataTypes.STRING
+    ubicacion: {
+      type: DataTypes.STRING,
     },
-    imagen:{
-        type:DataTypes.BLOB,
-        allowNull:true
+    imagen: {
+      type: DataTypes.BLOB,
+      allowNull: true,
     },
-    descripcion:{
-        type:DataTypes.TEXT,
-        allowNull:false
+    descripcion: {
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
-    nDormitorio:{
-        type: DataTypes.INTEGER,
-        allowNull:false
+    nDormitorio: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
-    nBano:{
-        type:DataTypes.INTEGER,
-        allowNull:false
+    nBano: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
-    tipoPropiedad:{
-        type:DataTypes.STRING,
-        allowNull:false
+    tipoPropiedad: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    estado:{
-        type:DataTypes.STRING,
-        allowNull:false
-    }
-},{
-    freezeTableName:true,
-    timestamps:false
-})
+    estado: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    idusuario: {
+      type: DataTypes.INTEGER,
+    },
+    idubicacion: {
+      type: DataTypes.INTEGER,
+    },
+  },
+  {
+    freezeTableName: true,
+    timestamps: false,
+  }
+);
 
-module.exports={
-    Inmueble
-}
+module.exports = {
+  Inmueble,
+};

@@ -16,16 +16,70 @@ const inmueblesController = {
     res.json(isDeleted);
   },
   update: async (req, res) => {
-    const {id, type} = req.body;
+    const {
+      idinmueble,
+      ambientes,
+      rangoMin,
+      rangoMax,
+      mtCuadrado,
+      corredor,
+      ubicacion,
+      imagen,
+      descripcion,
+      nDormitorio,
+      nBano,
+      tipoPropiedad,
+      estado,
+    } = req.body;
 
-    const isUpdated = await service.update({id, type});
+    const isUpdated = await service.update({
+      idinmueble,
+      ambientes,
+      rangoMin,
+      rangoMax,
+      mtCuadrado,
+      corredor,
+      ubicacion,
+      imagen,
+      descripcion,
+      nDormitorio,
+      nBano,
+      tipoPropiedad,
+      estado,
+    });
 
     res.json(isUpdated);
   },
   save: async (req, res) => {
-    const {id, type} = req.body;
+    const {
+      ambientes,
+      rangoMin,
+      rangoMax,
+      mtCuadrado,
+      corredor,
+      ubicacion,
+      imagen,
+      descripcion,
+      nDormitorio,
+      nBano,
+      tipoPropiedad,
+      estado,
+    } = req.body;
 
-    const isSaved = await service.save({id, type});
+    const isSaved = await service.save({
+      ambientes,
+      rangoMin,
+      rangoMax,
+      mtCuadrado,
+      corredor,
+      ubicacion,
+      imagen,
+      descripcion,
+      nDormitorio,
+      nBano,
+      tipoPropiedad,
+      estado,
+    });
 
     res.json(isSaved);
   },
