@@ -27,9 +27,16 @@ const Usuario = sequelize.define(
     contrasena: {
       type: DataTypes.STRING,
     },
-    contrasena:{
-        type:DataTypes.STRING
+    img:{
+        type:DataTypes.BLOB
+    },
+    telofono:{
+      type:DataTypes.STRING
+    },
+    tipo:{
+      type:DataTypes.STRING
     }
+
 },{
     timestamps: false,
     freezeTableName:true
@@ -41,7 +48,7 @@ Usuario.hasMany(Inmueble,{
 })
 
 Inmueble.belongsTo(Usuario,{
-    foreignKey:"idusuario",
+    foreignKey:"corredor",
     targetKey:'idusuario'
 })
 
