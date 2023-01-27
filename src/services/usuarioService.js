@@ -52,6 +52,20 @@ class UsuarioService {
 
     return users;
   }
+
+  async updateTipo(user){
+    const {idusuario,tipo} = user
+    const users = await Usuario.update({
+      tipo
+    },
+    {
+      where:{
+        idusuario
+      }
+    })
+    return users
+  }
+
 }
 
 module.exports = UsuarioService;
