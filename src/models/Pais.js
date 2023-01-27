@@ -1,4 +1,4 @@
-const { DataTypes, HasMany } = require('sequelize');
+const { DataTypes, } = require('sequelize');
 const {sequelize} = require('../config/bd')
 const {Region}=require('./Region');
 const { Ubicacion } = require('./Ubicacion');
