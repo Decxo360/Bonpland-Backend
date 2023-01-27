@@ -46,6 +46,11 @@ const usuarioController = {
 
     res.json(user);
   },
+  updateType: async(req,res)=>{
+    const {idusuario,tipo} = req.body;
+    const user = await service.updateTipo({idusuario,tipo});
+    res.json(user)
+  }
 };
 
 module.exports = usuarioController;
