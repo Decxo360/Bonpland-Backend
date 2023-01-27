@@ -1,6 +1,7 @@
 const {sequelize} = require('../config/bd');
 const {DataTypes} = require('sequelize');
 const {Usuario} = require('./Usuario');
+const { Imagen } = require('./Imagen');
 
 const Inmueble = sequelize.define(
   'inmueble',
@@ -28,10 +29,6 @@ const Inmueble = sequelize.define(
     ubicacion: {
       type: DataTypes.STRING,
     },
-    imagen: {
-      type: DataTypes.BLOB,
-      allowNull: true,
-    },
     descripcion: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -58,12 +55,18 @@ const Inmueble = sequelize.define(
     idubicacion: {
       type: DataTypes.INTEGER,
     },
+    imagen:{
+      type:DataTypes.INTEGER
+    }
   },
   {
     freezeTableName: true,
     timestamps: false,
   }
 );
+
+Inmueble.hasMany(Imagen,{foreignKey:'idinmueble',sourceKey:'idinmueble'})
+Imagen.belongsTo(Inmueble,{foreignKey:'idimagen',targetKey:'imagen'})
 
 module.exports = {
   Inmueble,
