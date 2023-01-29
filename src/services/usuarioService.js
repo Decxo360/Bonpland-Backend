@@ -9,13 +9,14 @@ class UsuarioService {
 
   async save(userNew) {
     
-    const {nombre, apellido_p, apellido_m, correo, contrasena} = userNew;
+    const {nombre, apellido_p, apellido_m, correo, contrasena,telefono} = userNew;
     const users = await Usuario.create({
       nombre,
       apellido_p,
       apellido_m,
       correo,
       contrasena,
+      telefono
     });
 
     return users;
