@@ -23,7 +23,7 @@ class UsuarioService {
   }
 
   async update(userReplace) {
-    const {idusuario, nombre, apellido_p, apellido_m, correo, contrasena} =
+    const {idusuario, nombre, apellido_p, apellido_m, correo, contrasena,telefono,img} =
       userReplace;
 
     const users = await Usuario.update(
@@ -33,6 +33,8 @@ class UsuarioService {
         apellido_m,
         correo,
         contrasena,
+        telefono,
+        img
       },
       {
         where: {
