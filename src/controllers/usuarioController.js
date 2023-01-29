@@ -25,7 +25,7 @@ const usuarioController = {
   },
 
   update: async (req, res) => {
-    const {idusuario, nombre, apellido_p, apellido_m, correo, contrasena} =
+    const {idusuario, nombre, apellido_p, apellido_m, correo, contrasena,img,telefono} =
       req.body;
 
     const user = await service.update({
@@ -35,6 +35,8 @@ const usuarioController = {
       apellido_m,
       correo,
       contrasena,
+      telefono,
+      img
     });
 
     res.json(user);
