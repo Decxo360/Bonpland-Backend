@@ -53,6 +53,11 @@ const usuarioController = {
     const {idusuario,tipo} = req.body;
     const user = await service.updateTipo({idusuario,tipo});
     res.json(user)
+  },
+  getUser: async(req,res)=>{
+    const idusuario = req.params.idusuario;
+    const user = await service.getUser(idusuario)
+    res.json(user)
   }
 };
 
