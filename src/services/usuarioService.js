@@ -68,7 +68,24 @@ class UsuarioService {
     })
     return users
   }
-
+  async getUser(idusuario){
+    const user = await Usuario.findOne(
+    {
+      where:{
+        idusuario
+      }
+    })
+    return user
+  }
+  async login(correo,contrasena){
+    const user = await Usuario.findOne({
+      where:{
+        correo,
+        contrasena
+      }
+    })
+    return user
+  }
 }
 
 module.exports = UsuarioService;
