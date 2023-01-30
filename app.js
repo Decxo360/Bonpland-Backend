@@ -14,6 +14,7 @@ app.use('/region', require('./src/routes/RegionRoutes'));
 app.use('/comuna', require('./src/routes/ComunaRoutes'));
 app.use('/favorito', require('./src/routes/FavoritoRoutes'));
 app.use('/ubicacion', require('./src/routes/UbicacionRoutes'));
+app.use('/auth', require('./src/routes/AuthRoute'));
 
 const port = process.env.PORT || 3030;
 app.listen(port, () => {
