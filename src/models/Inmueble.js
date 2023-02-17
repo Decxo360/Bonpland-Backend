@@ -57,7 +57,20 @@ const Inmueble = sequelize.define(
     },
     imagen:{
       type:DataTypes.INTEGER
+    },
+    destacado:{
+      type:DataTypes.STRING,
+      defaultValue:'no'
+    },
+    mtrConstruidos:{
+      type:DataTypes.INTEGER,
+      allowNull:false
+    },
+    mtrLuminosidad:{
+      type:DataTypes.STRING,
+      allowNull:false
     }
+  },
   },
   {
     freezeTableName: true,
